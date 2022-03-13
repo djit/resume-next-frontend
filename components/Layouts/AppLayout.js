@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Navigation from './Navigation';
+import Image from 'next/image'
 
 const AppLayout = ({ header, children }) => {
 
@@ -14,7 +15,8 @@ const AppLayout = ({ header, children }) => {
             <div
               className="h-32 bg-cover"
               style={{ backgroundImage: `url('/assets/img/cover.jpg')` }}
-            ></div>
+            >
+            </div>
             <div className="relative px-6 pt-12 pb-6 bg-white">
               <span
                 className="absolute top-4 right-7 py-px px-2 text-xs font-semibold leading-4 text-white uppercase bg-green-400 rounded-full"
@@ -24,11 +26,17 @@ const AppLayout = ({ header, children }) => {
                 href="/"
                 passHref
                 className="cursor-pointer"
-              ><img
+              >
+              <div className="absolute -top-10 ">
+                <Image
                   src="https://github.com/djit.png"
-                  alt="Avatar"
-                  className="block absolute -top-10 w-20 max-w-full h-20 align-middle rounded-xl border-2 border-white border-solid box-border"
-              /></Link>
+                  width={76}
+                  height={76}
+                  alt="@djit"
+                  className="w-20 max-w-full h-20 align-middle rounded-xl border-2 border-white border-solid box-border"
+                />
+              </div>
+              </Link>
               <div className="mb-1 text-lg font-semibold leading-7">
                 Djilali Tabbouche
               </div>

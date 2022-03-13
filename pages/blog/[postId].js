@@ -1,6 +1,7 @@
 import AppLayout from "/components/Layouts/AppLayout";
 import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
+import Image from 'next/image'
 
 export default function Post({ post }) {
   return (
@@ -32,8 +33,10 @@ export default function Post({ post }) {
         >
           { post.image ?
             <p className="mx-0 font-light leading-7 border-0 border-solid box-border">
-              <img
-                src={ post.image }
+              <Image
+                src={post.image}
+                width={800}
+                height={500}
                 alt="Image"
                 className="block my-8 max-w-full h-auto align-middle border-0 border-solid box-border"
               />
