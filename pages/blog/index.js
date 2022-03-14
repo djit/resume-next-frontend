@@ -20,16 +20,26 @@ export default function Blog({ posts }) {
 
 
 export async function getServerSideProps(context) {
-  const result = await fetch(process.env.STRAPI_BACKEND_API_ENDPOINT + '?sort[0]=publicPublishedAt:desc', {
+  const response = await fetch(process.env.STRAPI_BACKEND_API_ENDPOINT + '?sort[0]=publicPublishedAt:desc', {
       headers: {
         Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
       }
     }
   );
-  const data = await result.json()
-  const posts = data.data
-  //console.log(posts)
-  return {
-    props: { posts }
+  
+  
+  if (response.status >= 200 && response.status <= 299) {
+    const data = await response.json()
+    const posts = data.data
+    //console.log(posts)
+    return {
+      props: { posts }
+    }
+  } else {
+    // Handle errors
+    console.log(response.status, response.statusText);
+    return
   }
+
+  
 }
