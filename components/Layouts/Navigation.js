@@ -11,6 +11,7 @@ export default function Navigation() {
         <Link
           href="/"
           passHref
+          title="Resume"
         >
           <a className={`inline-flex pb-5 ${router.pathname == "/" ? "text-violet-500 border-t-0 border-b-2 border-violet-500 border-solid" : ""} duration-300 ease-in-out cursor-pointer box-border border-x-0 hover:border-violet-600 hover:text-violet-600`}>Resume</a>
         </Link>
@@ -19,6 +20,7 @@ export default function Navigation() {
         <Link
           href="/projects"
           passHref
+          title="Projects"
         >
           <a className={`inline-flex pb-5 ${router.pathname == "/projects" ? "text-violet-500 border-t-0 border-b-2 border-violet-500 border-solid" : ""} duration-300 ease-in-out cursor-pointer box-border border-x-0 hover:border-violet-600 hover:text-violet-600`}>Projects</a>
         </Link>
@@ -27,6 +29,7 @@ export default function Navigation() {
         <Link
           href="/blog"
           passHref 
+          title="Blog"
         >
           <a className={`inline-flex pb-5 ${router.pathname.startsWith("/blog") ? "text-violet-500 border-t-0 border-b-2 border-violet-500 border-solid" : ""} duration-300 ease-in-out cursor-pointer box-border border-x-0 hover:border-violet-600 hover:text-violet-600`}>Blog</a>
         </Link>
