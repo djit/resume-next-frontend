@@ -191,13 +191,9 @@ export default function Home() {
         </div>
 
         <div className="mb-5 sm:flex sm:items-start">
-          <div
-            className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white bg-blue-600 rounded-xl"
-            style={{ backgroundColor: "#0061FF" }}
-          >
-            <i
-              className="inline-block text-3xl not-italic leading-none normal-case"
-            ></i>
+        <div className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white rounded-xl">
+            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cover" style={{ backgroundImage: `url('/assets/img/trademedia-logo.gif')` }}>
+            </div>
           </div>
 
           <div className="my-0 w-full sm:my-0 sm:mr-0 sm:ml-4">
