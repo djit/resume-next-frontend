@@ -192,7 +192,7 @@ export default function Home() {
 
         <div className="mb-5 sm:flex sm:items-start">
         <div className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white rounded-xl">
-            <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cover" style={{ backgroundImage: `url('/assets/img/trademedia-logo.gif')` }}>
+            {/* <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cover" style={{ backgroundImage: `url('/assets/img/trademedia-logo.gif')` }}> */}
             </div>
           </div>
 
