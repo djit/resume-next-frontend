@@ -299,9 +299,6 @@ export default function Home() {
             className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white bg-slate-100 rounded-xl"
             style={{ backgroundColor: "rgb(241 245 249)" }}
           >
-            <i
-              className="inline-block text-3xl not-italic leading-none normal-case"
-            ></i>
           </div>
 
           <div className="my-0 w-full sm:my-0 sm:mr-0 sm:ml-4">
@@ -398,11 +395,7 @@ export default function Home() {
         <div className="sm:flex sm:items-start">
           <div
             className="flex flex-shrink-0 justify-center items-center w-12 h-12 text-white bg-slate-100 rounded-xl"
-            style={{ backgroundColor: "rgb(241 245 249)" }}
           >
-            <i
-              className="inline-block text-3xl not-italic leading-none normal-case"
-            ></i>
           </div>
 
           <div className="my-0 w-full sm:my-0 sm:mr-0 sm:ml-4">
