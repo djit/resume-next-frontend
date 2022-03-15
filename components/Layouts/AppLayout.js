@@ -51,7 +51,7 @@ const AppLayout = ({ header, children }) => {
                   <Link
                     href="/assets/files/djilali_tabbouche.pdf"
                     passHref
-                    target={"_blank"}
+                    target="_blank"
                     rel={'noreferrer'}
                   >
                     Download CV
@@ -63,7 +63,7 @@ const AppLayout = ({ header, children }) => {
                   <Link
                     href="/assets/files/djilali_tabbouche.pdf"
                     passHref
-                    target={"_blank"}
+                    target="_blank"
                     rel={'noreferrer'}
                   >
                   <svg
