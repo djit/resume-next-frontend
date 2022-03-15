@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <AppLayout>
       <Head>
-      <title>Djilali Tabbouche: Blog</title>
+      <title>Djilali Tabbouche</title>
       </Head>
 
       <div className="p-6 mt-5 mb-0 bg-white rounded-xl">
