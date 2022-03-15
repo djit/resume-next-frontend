@@ -8,14 +8,16 @@ export default function Document() {
         <link rel="shortcut icon" type="image/x-icon" href="/assets/img/favicon.ico"/>
 
         {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJ79SGB40"></script>
-        <script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-QHJ79SGB40" strategy="afterInteractive"></script>
+        <Script id="google-analytics" strategy="afterInteractive">
+        {`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments)}
+          function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-QHJ79SGB40');
-        </script>
+        `}
+        </Script>
       </Head>
       <body className="bg-gray-100 antialiased">
         <Main />
