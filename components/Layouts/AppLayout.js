@@ -161,6 +161,18 @@ const AppLayout = ({ header, children }) => {
             </div>
           </div>
           {/* <!-- End Skills Block --> */}
+
+          <div className="flow-root p-6 mt-5 mb-0 bg-white rounded-xl">
+            {/* <!-- Start Built-With Block --> */}
+            <h2 className="mx-0 mt-0 mb-2 text-lg font-semibold leading-7">Frontend</h2>
+            <div className="text-sm">Built with <Link href="https://nextjs.org/"><a target="_blank"><span className="font-extrabold">Next.js</span></a></Link> + <Link href="https://tailwindcss.com/"><a target="_blank"><span className="font-extrabold">Tailwindcss</span></a></Link> - hosted on <Link href="https://vercel.com/"><a target="_blank">Vercel</a></Link></div>
+            
+            <h2 className="mx-0 mt-4 mb-2 text-lg font-semibold leading-7">Backend</h2>
+            <div className="text-sm">Built with <Link href="https://strapi.io/"><a target="_blank"><span className="font-extrabold">Strapi</span></a></Link> - hosted on <Link href="https://render.com/"><a target="_blank">Render</a></Link></div>
+
+          </div>
+          {/* <!-- End Built-With Block --> */}
+
         </div>
         {/* <!-- End Left Side --> */}
 
