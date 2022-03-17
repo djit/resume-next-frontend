@@ -132,7 +132,7 @@ const AppLayout = ({ header, children }) => {
               </span>
               <span
                 className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Next.js/React
+                >Next.js
               </span>
               <span
                 className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
