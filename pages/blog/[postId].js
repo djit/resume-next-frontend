@@ -72,7 +72,7 @@ export async function getStaticPaths() {
 }
 
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
   const result = await fetch(`${process.env.STRAPI_BACKEND_API_ENDPOINT}?filters[slug]=${params.postId}&populate=*`, {
       headers: {
         Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
