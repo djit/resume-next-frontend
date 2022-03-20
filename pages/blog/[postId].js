@@ -36,8 +36,8 @@ export default function Post({ post }) {
               <Image
                 src={post.image}
                 width={800}
-                height={500}
-                alt="Image"
+                height={600}
+                alt={ post.title }
                 className="block my-8 max-w-full h-auto align-middle border-0 border-solid box-border"
               />
             </p>
