@@ -87,6 +87,7 @@ export async function getStaticProps({ params }) {
     delete post.images
   }
   return {
-    props: { post }
+    props: { post },
+    revalidate: 60 * 60 //expire content every hour
   }
 }
