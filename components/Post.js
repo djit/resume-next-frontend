@@ -4,7 +4,7 @@ export default function PostTitle({ post }) {
   return (
       <div className="p-0 bg-white mb-12">
         <div className="flex items-center justify-between">
-          <span className="font-light text-gray-600 text-md">{ new Date(post.publicPublishedAt).toLocaleDateString() }</span>
+          <span className="font-light text-gray-600 text-md">{ new Date(post.publicPublishedAt).toDateString() }</span>
           <span className="px-2 py-1 font-bold text-gray-100 bg-gray-600 rounded">
               { post.category }
           </span>
