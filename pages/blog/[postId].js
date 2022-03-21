@@ -68,7 +68,7 @@ export async function getStaticPaths() {
     params: { postId: post.attributes.slug },
   }))
 
-  return { paths, fallback: true }
+  return { paths, fallback: false }
 }
 
 
