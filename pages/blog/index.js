@@ -33,8 +33,7 @@ export async function getServerSideProps(context) {
     const posts = data.data
     //console.log(posts)
     return {
-      props: { posts },
-      revalidate: 60 //revalidate every minute
+      props: { posts }
     }
   } else {
     // Handle errors
