@@ -36,9 +36,11 @@ export default function Home() {
                 rel={'noreferrer'} 
                 className="duration-300 ease-in-out cursor-pointer hover:text-violet-600"
               >
-                <i
-                  className="inline-block text-2xl not-italic leading-none normal-case bx bxl-facebook-circle"
-                ></i>
+                <a target="_blank" title="Facebook">
+                  <i
+                    className="inline-block text-2xl not-italic leading-none normal-case bx bxl-facebook-circle"
+                  ></i>
+                </a>
               </Link>
             </li>
             <li className="mr-0 ml-5 text-left">
@@ -49,9 +51,11 @@ export default function Home() {
                 rel={'noreferrer'} 
                 className="duration-300 ease-in-out cursor-pointer hover:text-violet-600"
               >
-                <i
-                  className="inline-block text-2xl not-italic leading-none normal-case bx bxl-twitter"
-                ></i>
+                <a target="_blank" title="Twitter">
+                  <i
+                    className="inline-block text-2xl not-italic leading-none normal-case bx bxl-twitter"
+                  ></i>
+                </a>
               </Link>
             </li>
             <li className="mr-0 ml-5 text-left">
@@ -62,9 +66,11 @@ export default function Home() {
                 rel={'noreferrer'} 
                 className="duration-300 ease-in-out cursor-pointer hover:text-violet-600"
               >
-                <i
+                <a target="_blank" title="Github">
+                  <i
                   className="inline-block text-2xl not-italic leading-none normal-case bx bxl-github"
-                ></i>
+                  ></i>
+                </a>
               </Link>
             </li>
           </ul>
