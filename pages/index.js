@@ -2,9 +2,9 @@ import AppLayout from "/components/Layouts/AppLayout";
 import Head from "next/head";
 import Link from 'next/link';
 
-export default function Home() {
+export default function Home({ resume }) {
   return (
-    <AppLayout>
+    <AppLayout resume={ resume }>
       <Head>
       <title>Djilali Tabbouche</title>
       </Head>
@@ -13,8 +13,7 @@ export default function Home() {
         {/* <!-- Start About Me Block --> */}
         <h2 className="mx-0 mt-0 mb-5 text-lg font-semibold leading-7">About me</h2>
         <p className="mx-0 mt-0 mb-5 text-gray-600">
-          From dev eng., architecture, consulting, entrepreneurship to CTO managing a team of 50+: it&apos;s all about the people and the work culture.<br/>
-          I&apos;m looking for passionate team members sharing a clear vision and a no-BS management who will drive us towards a common goal.
+          { resume.about.introduction }
         </p>
 
         <div className="flex flex-col">
@@ -24,7 +23,7 @@ export default function Home() {
             target={'_blank'}
             rel={'noreferrer'} 
           >
-            <a className="flex items-center font-medium text-violet-500 duration-300 ease-in-out cursor-pointer hover:text-violet-600">dtabbouche@gmail.com</a>
+            <a className="flex items-center font-medium text-violet-500 duration-300 ease-in-out cursor-pointer hover:text-violet-600">{ resume.about.email }</a>
           </Link>
 
           <ul className="flex p-0 mx-0 mt-4 mb-0">
@@ -597,4 +596,29 @@ export default function Home() {
 
     </AppLayout>
   )
+}
+
+
+
+export async function getStaticProps() {
+  const response = await fetch(process.env.STRAPI_BACKEND_MEDIA_HOST + '/api/resumes?populate=*', {
+      headers: {
+        Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
+      }
+    }
+  );
+  
+  
+  if (response.status >= 200 && response.status <= 299) {
+    const data = await response.json()
+    const resume = data.data[0].attributes
+    //console.log(resume)
+    return {
+      props: { resume }
+    }
+  } else {
+    // Handle errors
+    console.log(response.status, response.statusText);
+    return
+  }
 }

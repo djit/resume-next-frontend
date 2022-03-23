@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Navigation from './Navigation';
 import Image from 'next/image'
 
-const AppLayout = ({ header, children }) => {
+export default function AppLayout({ header, children, resume }) {
 
   return (
     <main className="p-4 mx-auto w-full max-w-5xl leading-6 text-black lg:max-w-screen-lg xl:max-w-screen-xl sm:max-w-screen-sm sm:p-5 md:max-w-screen-md">
@@ -38,11 +38,10 @@ const AppLayout = ({ header, children }) => {
               </div>
               </Link>
               <div className="mb-1 text-lg font-semibold leading-7">
-                Djilali Tabbouche
+                { resume.card.name }
               </div>
               <div className="mb-6 text-sm leading-5 text-gray-400">
-                Software Architect<br/>
-                Full Stack Developer
+              { resume.card.title }
               </div>
               <div className="flex">
                 <button
@@ -96,23 +95,23 @@ const AppLayout = ({ header, children }) => {
             <div className="">
               <div className="flex justify-between">
                 <div className="text-gray-400">Location</div>
-                <div className="font-medium text-right text-gray-600">Paris - France</div>
+                <div className="font-medium text-right text-gray-600">{ resume.information.location }</div>
               </div>
               <div className="flex justify-between mt-4 mb-0">
                 <div className="text-gray-400">Experience</div>
-                <div className="font-medium text-right text-gray-600">15+ years</div>
+                <div className="font-medium text-right text-gray-600">{ resume.information.experience }</div>
               </div>
               <div className="flex justify-between mt-4 mb-0">
                 <div className="text-gray-400">Availability</div>
-                <div className="font-medium text-right text-gray-600">September 2022</div>
+                <div className="font-medium text-right text-gray-600">{ resume.information.availability }</div>
               </div>
               <div className="flex justify-between mt-4 mb-0">
                 <div className="text-gray-400">Relocation</div>
-                <div className="font-medium text-right text-gray-600">Yes</div>
+                <div className="font-medium text-right text-gray-600">{ resume.information.relocation ?'Yes' : 'No' }</div>
               </div>
               <div className="flex justify-between mt-4 mb-0">
                 <div className="text-gray-400">Remote</div>
-                <div className="font-medium text-right text-gray-600">Yes</div>
+                <div className="font-medium text-right text-gray-600">{ resume.information.remote ?'Yes' : 'No' }</div>
               </div>
             </div>
           </div>
@@ -122,42 +121,13 @@ const AppLayout = ({ header, children }) => {
             {/* <!-- Start Skills Block --> */}
             <h2 className="mx-0 mt-0 mb-5 text-lg font-semibold leading-7">Skills</h2>
             <div className="flex flex-wrap -m-2">
+            { resume.skills.data.map(skill => (
               <span
+                key={ skill.id }
                 className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Python
+                >{ skill.attributes.name }
               </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Node.js/Javascript
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Next.js
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Laravel/PHP
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >MongoDb
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Linux Sysadmin
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Ningx
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >AWS S3/Lambda/EC2
-              </span>
-              <span
-                className="py-1 px-4 m-1 text-sm font-medium leading-5 text-violet-500 bg-violet-100 rounded-lg"
-                >Project Management
-              </span>
+            ))}
             </div>
           </div>
           {/* <!-- End Skills Block --> */}
@@ -192,5 +162,3 @@ const AppLayout = ({ header, children }) => {
     </main>
   );
 };
-
-export default AppLayout;
