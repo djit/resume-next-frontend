@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Navigation from './Navigation';
 import Image from 'next/image'
 
-export default function AppLayout({ header, children, resume }) {
+export default function AppLayout({ resume, children }) {
 
   return (
     <main className="p-4 mx-auto w-full max-w-5xl leading-6 text-black lg:max-w-screen-lg xl:max-w-screen-xl sm:max-w-screen-sm sm:p-5 md:max-w-screen-md">

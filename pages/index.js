@@ -602,11 +602,10 @@ export default function Home({ resume }) {
 
 export async function getStaticProps() {
   const response = await fetch(process.env.STRAPI_BACKEND_MEDIA_HOST + '/api/resumes?populate=*', {
-      headers: {
-        Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
-      }
+    headers: {
+      Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
     }
-  );
+  });
   
   
   if (response.status >= 200 && response.status <= 299) {

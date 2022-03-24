@@ -3,9 +3,9 @@ import Head from 'next/head'
 import ReactMarkdown from 'react-markdown'
 import Image from 'next/image'
 
-export default function Post({ post }) {
+export default function Post({ resume, post }) {
   return (
-    <AppLayout>
+    <AppLayout resume={ resume }>
       <Head>
       <title>Djilali Tabbouche - Blog - { post.title }</title>
       <base target="_blank"/>
@@ -32,7 +32,7 @@ export default function Post({ post }) {
           className="py-0 max-w-none text-base sm:py-4 text-slate-800"
         >
           { post.image ?
-            <p className="mx-0 font-light leading-7 border-0 border-solid box-border">
+            <div className="mx-0 font-light leading-7 border-0 border-solid box-border">
               <Image
                 src={post.image}
                 width={800}
@@ -40,13 +40,13 @@ export default function Post({ post }) {
                 alt={ post.title }
                 className="block my-8 max-w-full h-auto align-middle border-0 border-solid box-border"
               />
-            </p>
+            </div>
             : ''
           }
 
-          <p className="my-0 mx-0 font-light leading-7 border-0 prose">
-          <ReactMarkdown>{ post.content }</ReactMarkdown>
-          </p>
+          <div className="my-0 mx-0 font-light leading-7 border-0 prose">
+            <ReactMarkdown>{ post.content }</ReactMarkdown>
+          </div>
         </div>
 
       </div>
@@ -73,21 +73,30 @@ export async function getStaticPaths() {
 
 
 export async function getStaticProps({ params }) {
-  const result = await fetch(`${process.env.STRAPI_BACKEND_API_ENDPOINT}?filters[slug]=${params.postId}&populate=*`, {
-      headers: {
-        Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
-      }
+  const post_response = await fetch(`${process.env.STRAPI_BACKEND_API_ENDPOINT}?filters[slug]=${params.postId}&populate=*`, {
+    headers: {
+      Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
     }
-  );
-  const data = await result.json()
-  const post = data.data[0].attributes
+  });
+
+  const resume_response = await fetch(process.env.STRAPI_BACKEND_MEDIA_HOST + '/api/resumes?populate=*', {
+    headers: {
+      Authorization: 'Bearer ' + process.env.STRAPI_BACKEND_API_KEY
+    }
+  });
+
+  const post_data = await post_response.json()
+  const post = post_data.data[0].attributes
   //console.log(post)
+  const resume_data = await resume_response.json()
+  const resume = resume_data.data[0].attributes
+
   if (post.images.data) {
     post.image = process.env.STRAPI_BACKEND_MEDIA_HOST + post.images.data[0].attributes.url // add main image full url to post object
     delete post.images
   }
   return {
-    props: { post },
+    props: { resume, post },
     revalidate: 60 //revalidate every minute
   }
 }
