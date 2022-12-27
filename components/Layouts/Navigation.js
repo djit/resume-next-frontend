@@ -25,6 +25,7 @@ export default function Navigation() {
           <a className={`inline-flex pb-5 ${router.pathname == "/projects" ? "text-violet-500 border-t-0 border-b-2 border-violet-500 border-solid" : ""} duration-300 ease-in-out cursor-pointer box-border border-x-0 hover:border-violet-600 hover:text-violet-600`}>Projects</a>
         </Link>
       </li> */}
+      {/* 
       <li className="mr-0 ml-8 text-left">
         <Link
           href="/blog"
@@ -33,7 +34,7 @@ export default function Navigation() {
         >
           <a className={`inline-flex pb-5 ${router.pathname.startsWith("/blog") ? "text-violet-500 border-t-0 border-b-2 border-violet-500 border-solid" : ""} duration-300 ease-in-out cursor-pointer box-border border-x-0 hover:border-violet-600 hover:text-violet-600`}>Blog</a>
         </Link>
-      </li>
+      </li> */}
     </ul>
   )
 }
