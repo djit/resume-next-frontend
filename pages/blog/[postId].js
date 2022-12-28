@@ -64,10 +64,11 @@ export async function getStaticPaths() {
   );
   const data = await result.json()
   console.log(data.data)
-  const paths = data.data.map((post) => ({
+  /*const paths = data.data.map((post) => ({
     params: { postId: post.attributes.slug },
   }))
-
+  */
+ const paths = []
   return { paths, fallback: false }
 }
 
