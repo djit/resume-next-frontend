@@ -71,7 +71,7 @@ export async function getStaticPaths() {
     ]
   } */
   const data = {
-    data: {}
+    data: []
   }
   console.log(data.data)
   const paths = data.data.map((post) => ({
