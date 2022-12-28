@@ -68,7 +68,7 @@ export async function getStaticPaths() {
     params: { postId: post.attributes.slug },
   }))
   */
- const paths = [{postId: ''}]
+ const paths = [ { params: {postId: ''} } ]
   return { paths, fallback: false }
 }
 
